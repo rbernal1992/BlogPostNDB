@@ -1,6 +1,6 @@
 function watchform(){
 	$.ajax({
-		url: "http://localhost:8080/api/blog-posts",
+		url: "/api/blog-posts",
 		method: "GET",
 		dataType: "json",
 		success: function(jsonResponse){
@@ -32,7 +32,7 @@ function watchform(){
 	$('#submt').on("click",function(event){
 		event.preventDefault();
 		$.ajax({
-			url: "http://localhost:8080/api/blog-posts/",
+			url: "/api/blog-posts/",
 			data: JSON.stringify( {
 					"title": $('#additemtitle').val(),
 					"content": $('#additemcontent').val(),
@@ -77,7 +77,7 @@ function watchform(){
 		event.preventDefault();
 		console.log(author);
 		$.ajax({
-			url: "http://localhost:8080/api/blog-post",
+			url: "/api/blog-post",
 			data: {
 				"author": author
 			},
@@ -95,7 +95,7 @@ function watchform(){
 		})
 		
 		$.ajax({
-			url: "http://localhost:8080/api/blog-posts/"+id_todelete,
+			url: "/api/blog-posts/"+id_todelete,
 			method: "DELETE",
 			dataType: "json",
 			success: function(responseJson){
@@ -114,7 +114,7 @@ function watchform(){
 		})
 		
 		$.ajax({
-		url: "http://localhost:8080/api/blog-posts",
+		url: "/api/blog-posts",
 		method: "GET",
 		dataType: "json",
 		success: function(jsonResponse){
@@ -182,7 +182,7 @@ function watchform(){
 		});
 		if(success == 1){
 		$.ajax({
-		url: "http://localhost:8080/api/blog-posts",
+		url: "/api/blog-posts",
 		method: "GET",
 		dataType: "json",
 		success: function(jsonResponse){
